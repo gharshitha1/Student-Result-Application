@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Apply background with subtle gradient and animation */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff8e72, #ffb084);
+            background-size: 400% 400%;
+            animation: gradientBG 8s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Form container styling */
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ff758c;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        input[type="text"], input[type="password"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9em;
+            box-sizing: border-box;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus, input[type="file"]:focus {
+            border-color: #ff758c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 117, 140, 0.5);
+        }
+
+        input[type="submit"] {
+            background: #ff758c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background: #ff8e72;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Register Form</h1>
+        <form action="./register" method="post" enctype="multipart/form-data">
+            <label for="user">Username:</label>
+            <input type="text" id="user" name="user" placeholder="Enter username" required>
+            
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass" placeholder="Enter password" required>
+            
+            <label for="file">Upload Picture:</label>
+            <input type="file" id="file" name="file" accept="video/*">
+            
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
